@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h3 class="mt-5 box-title">Daftar Mentor</h3>
+        <h3 class="mt-5 box-title">Dokumentasi Foto</h3>
         <div class="card">
             <div class="card-body">
             <div class="table table-stats order-table ov-h">
@@ -11,7 +11,7 @@
                         <tr>
                         <th>#</th>
                         <th>Nama</th>
-                        <th>Jabatan</th>
+                        <th>Tanggal</th>
                         <th>Foto</th>
                         <th>Action</th>
                         </tr>
@@ -21,13 +21,13 @@
                             <tr>
                             <td scope="row">{{$item->id}}</td>
                             <td scope="row">{{$item->nama}}</td>
-                            <td scope="row">{{$item->jabatan}}</td>
-                            <td scope="row"><img src="{{url($item->photo)}}" alt="foto mentor" width="50" height="50"></td>
+                            <td scope="row">{{$item->tanggal}}</td>
+                            <td scope="row"><img src="{{url($item->photo)}}" alt="dokumentasi" width="50" height="50"></td>
                             <td class="d-block m-auto" scope="row">
-                                <a href="{{route('mentor.edit',$item->id)}}" class="btn btn-sm btn-info">
-                                    <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                                <a href="{{route('dokumentasi.edit',$item->id)}}" class="btn btn-sm btn-info">
+                                    <i class="fa fa-pencil-alt" aria-hidden="true"></i> 
                                 </a>
-                                <form action="{{route('mentor.destroy',$item->id)}}" method="post" class="d-inline">
+                                <form action="{{route('dokumentasi.destroy',$item->id)}}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-sm btn-danger">

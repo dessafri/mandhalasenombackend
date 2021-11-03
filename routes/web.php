@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::resource('agenda', 'agendaController');
 Route::resource('mentor', 'mentorController');
+Route::resource('dokumentasi', 'fotoController');

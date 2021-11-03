@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class mentorModel extends Model
+class fotoModel extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['nama', 'jabatan', 'photo'];
-    protected $table = 'mentor';
+    protected $fillable = ['nama', 'tanggal', 'photo'];
+    protected $table = 'photo';
 
     public function getPhotoAttribute($value)
     {

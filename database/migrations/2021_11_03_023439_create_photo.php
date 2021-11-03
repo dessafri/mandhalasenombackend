@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMentor extends Migration
+class CreatePhoto extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateMentor extends Migration
      */
     public function up()
     {
-        Schema::create('mentor', function (Blueprint $table) {
+        Schema::create('photo', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->String('nama');
-            $table->String('jabatan');
+            $table->date('tanggal');
+            $table->String('photo');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CreateMentor extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mentor');
+        Schema::dropIfExists('photo');
     }
 }

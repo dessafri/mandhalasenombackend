@@ -74,10 +74,8 @@
                 </a>
                 <div id="collapsePagesdokumentasi" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Lihat Foto</a>
-                        <a class="collapse-item" href="login.html">Tambah Foto</a>
-                        <a class="collapse-item" href="register.html">Edit Foto</a>
-                        <a class="collapse-item" href="forgot-password.html">Delete Foto</a>
+                        <a class="collapse-item" href="{{route('dokumentasi.index')}}">Lihat Foto</a>
+                        <a class="collapse-item" href="{{route('dokumentasi.create')}}">Tambah Foto</a>
                     </div>
                 </div>
             </li>

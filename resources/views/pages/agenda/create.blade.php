@@ -20,7 +20,7 @@
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>
                 <div class="form-group">
-                    <label for="tanggalKegiatan" class="form-control-label">Tanggal Kegiatan Kegiatan</label>
+                    <label for="tanggalKegiatan" class="form-control-label">Tanggal Kegiatan</label>
                     <input type="date" class="form-control @error('tanggal') id-invalid @enderror" name="tanggal" id="tanggalKegiatan" value="{{old('tanggal')}}">
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>

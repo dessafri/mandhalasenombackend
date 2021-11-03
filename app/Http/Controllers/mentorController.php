@@ -24,6 +24,9 @@ class mentorController extends Controller
     public function store(mentorRequest $request)
     {
         $data = $request->all();
+        $data['photo'] = $request
+            ->file('photo')
+            ->store('assets/mentor', 'public');
         mentorModel::create($data);
         return redirect()->route('mentor.index');
     }
@@ -35,6 +38,9 @@ class mentorController extends Controller
     public function update(mentorRequest $request, $id)
     {
         $data = $request->all();
+        $data['photo'] = $request
+            ->file('photo')
+            ->store('assets/mentor', 'public');
         $item = mentorModel::findOrFail($id);
         $item->update($data);
         return redirect()->route('mentor.index');

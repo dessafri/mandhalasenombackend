@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class mentorRequest extends FormRequest
+class fotoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class mentorRequest extends FormRequest
     {
         return [
             'nama' => 'required|max:255',
-            'jabatan' => 'required',
+            'tanggal' => 'required',
             'photo' => 'required|image',
         ];
     }
