@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('agenda', 'API\agendaController@all');
+Route::get('mentor', 'API\mentorController@all');
+Route::get('dokumentasi', 'API\fotoController@all');
