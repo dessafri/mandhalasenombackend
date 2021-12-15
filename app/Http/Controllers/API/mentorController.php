@@ -16,16 +16,52 @@ class mentorController extends Controller
         $jabatan = $request->input('jabatan');
         $photo = $request->input('photo');
 
-        $agenda = mentorModel::all();
+        $mentor = mentorModel::all();
         if ($id) {
-            $agenda = mentorModel::findOrFail($id);
+            $mentor = mentorModel::findOrFail($id);
 
             return ResponseFormatter::success(
-                $agenda,
+                $mentor,
                 'Data Berhasil Di Temukan'
             );
         }
+        if ($jabatan == 'Relawan' || $jabatan == 'relawan') {
+            $mentor = mentorModel::whereRaw('LOWER(`jabatan`) LIKE ?', [
+                $jabatan,
+            ])->get();
 
-        return ResponseFormatter::success($agenda, 'Data Berhasil Di Temukan');
+            if ($mentor) {
+                return ResponseFormatter::success(
+                    $mentor,
+                    'Data Berhasil Di Temukan'
+                );
+            } else {
+                return ResponseFormatter::error(
+                    null,
+                    'Data transaksi tidak ada',
+                    404
+                );
+            }
+        } else {
+            $mentor = mentorModel::whereRaw(
+                'LOWER(`jabatan`) NOT LIKE ?',
+                'Relawan'
+            )->get();
+
+            if ($mentor) {
+                return ResponseFormatter::success(
+                    $mentor,
+                    'Data Berhasil Di Temukan'
+                );
+            } else {
+                return ResponseFormatter::error(
+                    null,
+                    'Data transaksi tidak ada',
+                    404
+                );
+            }
+        }
+
+        return ResponseFormatter::success($mentor, 'Data Berhasil Di Temukan');
     }
 }

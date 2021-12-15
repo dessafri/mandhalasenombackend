@@ -18,6 +18,7 @@ class CreateAgenda extends Migration
             $table->String('title');
             $table->String('slug');
             $table->longText('Keterangan');
+            $table->String('photo');
             $table->date('tanggal');
             $table->softDeletes();
             $table->timestamps();

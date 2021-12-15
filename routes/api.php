@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('agenda', 'API\agendaController@all');
 Route::get('mentor', 'API\mentorController@all');
 Route::get('dokumentasi', 'API\fotoController@all');
+Route::get('artikel', 'API\artikelcontroller@all');

@@ -25,6 +25,9 @@ class agendaController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['photo'] = $request
+            ->file('photo')
+            ->store('assets/agenda', 'public');
         agendaModel::create($data);
         return redirect()->route('agenda.index');
     }

@@ -5,12 +5,24 @@
         <h3 class="mt-5 box-title">Edit Agenda</h3>
         <div class="card">
             <div class="card-body">
-            <form action="{{route('agenda.update',$item->id)}}" method="POST">
+            <form action="{{route('agenda.update',$item->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
                     <label for="judulkegiatan" class="form-control-label">Judul Kegiatan</label>
                     <input type="text" class="form-control @error('title') id-invalid @enderror" id="judulkegiatan" value="{{old('title') ? old('title') : $item->title }}" name="title">
+                    @error('type') <div class="text-muted">{{$message}}</div>@enderror
+                </div>
+                <div class="form-group">
+                    <label for="fotomentor" class="form-control-label">Foto Mentor</label><br>
+                    <img src="{{url($item->photo)}}" alt="foto mentor" width="150" height="50">
+                    <input 
+                    type="file" 
+                    class="form-control pb-3 @error('photo') id-invalid @enderror" id="fotomentor" 
+                    value="{{old('photo')}}" 
+                    name="photo"
+                    accept="image/*"
+                    required>
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>
                 <div class="form-group">

@@ -5,7 +5,7 @@
         <h3 class="mt-5 box-title">Edit Dokumentasi</h3>
         <div class="card">
             <div class="card-body">
-            <form action="{{route('mentor.update',$item->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('dokumentasi.update',$item->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
@@ -14,8 +14,8 @@
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>
                 <div class="form-group">
-                    <label for="tanggal" class="form-control-label @error('Keterangan') id-invalid @enderror">Tanggal Kegiatan</label>
-                    <input name="jabatan" id="tanggal" class=" form-control" value="{{old('jabatan') ? old('jabatan'): $item-> jabatan}}">
+                    <label for="tanggalKegiatan" class="form-control-label">Tanggal Kegiatan</label>
+                    <input type="date" class="form-control @error('tanggal') id-invalid @enderror" name="tanggal" id="tanggalKegiatan" value="{{old('tanggal') ? old('tanggal') : $item->tanggal}}">
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>
                 <div class="form-group">

@@ -20,3 +20,8 @@ Auth::routes();
 Route::resource('agenda', 'agendaController');
 Route::resource('mentor', 'mentorController');
 Route::resource('dokumentasi', 'fotoController');
+Route::resource('artikel', 'artikelController');
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect()->route('/');
+});

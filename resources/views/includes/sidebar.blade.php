@@ -69,13 +69,31 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesdokumentasi"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-user-friends"></i>
+                    <i class="fas fa-camera"></i>
                     <span>Foto</span>
                 </a>
                 <div id="collapsePagesdokumentasi" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{route('dokumentasi.index')}}">Lihat Foto</a>
                         <a class="collapse-item" href="{{route('dokumentasi.create')}}">Tambah Foto</a>
+                    </div>
+                </div>
+            </li>
+            <div class="sidebar-heading">
+                Artikel
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseartikel"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="far fa-newspaper"></i>
+                    <span>Artikel</span>
+                </a>
+                <div id="collapseartikel" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('artikel.index')}}">Lihat Artikel</a>
+                        <a class="collapse-item" href="{{route('artikel.create')}}">Tambah Artikel</a>
                     </div>
                 </div>
             </li>

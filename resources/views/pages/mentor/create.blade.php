@@ -14,9 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label for="jabatanmentor" class="form-control-label @error('Keterangan') id-invalid @enderror">Jabatan Mentor</label>
-                    <textarea name="jabatan" id="jabatanmentor" class="ckeditor form-control">
-                        {{old('jabatan')}}
-                    </textarea>
+                    <input name="jabatan" id="tanggal" class=" form-control" value="{{old('jabatan')}}">
                     @error('type') <div class="text-muted">{{$message}}</div>@enderror
                 </div>
                  <div class="form-group">
